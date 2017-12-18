@@ -111,3 +111,19 @@
 ```html
 {{$mask Estado valueDelimiter="|" values="01|02|03|04|05|06|07|08|09|10|11|12|13|14|15|16|17|18|19|20|21|22|23|24|25|26|27|28|29|30|31|32" replaceWith="Aguascalientes|Baja California|Baja California Sur|Campeche|Coahuila de Zaragoza|Colima|Chiapas|Chihuahua|Distrito Federal|Durango|Guanajuato|Guerrero|Hidalgo|Jalisco|México|Michoacán de Ocampo|Morelos|Nayarit|Nuevo León|Oaxaca|Puebla|Querétaro|Querétaro Roo|San Luis Potosí|Sinaloa|Sonora|Tabasco|Tamaulipas|Tlaxcala|Veracruz de Ignacio de la Llave|Yucatán|Zacatecas"}}
 ```
+
+### Información más compleja
+
+#### Extra valor
+
+Imprimir un extra valor cuando el atributo sea igual a un valor especifico ejemplo, imprimir el valor del nodo cuando el atributo sea "sucursal"
+
+```html
+{{#each Addenda.AddendaBuzonFiscal.Extra}}
+	{{#switch _atributo}}
+		{{#case "sucursal"}}
+			<div>{{_valor}}</div>
+		{{/case}}
+	{{/switch}}
+{{/each}}
+```
